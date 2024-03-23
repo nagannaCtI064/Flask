@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.style1 {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 400px;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    color: #3f51b5;
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    font-size: 18px;
+    color: #333333;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button[type="submit"] {
+    background-color: #3f51b5;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button[type="submit"]:hover {
+    background-color: #303f9f;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: #4caf50;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #333333;
+    margin: 5px 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="style1">
+    <h1>Delete Data</h1>
+    <form action="/delete" method="post">
+        <label for="id">Id:</label>
+        <input type="number"id="_id"name="_id"><br>
+        <label for="name">Name:</label>
+        <input type="text"id="name"name="name"><br>
+        <button type="submit">Delete</button>
+    </form>
+    </div>
+
+    {% if data %}
+    <h2>Data Retrieved</h2>
+    <p>id:{{data._id}}</p>
+    <p>Name: {{ data.name }}</p>
+    
+    {% endif %}
+
+</body>
+</html>
